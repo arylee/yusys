@@ -1,2 +1,2 @@
 # yusys
-Open Source for YUSYS Repsitory
+Open Source for YUSYS Repository
