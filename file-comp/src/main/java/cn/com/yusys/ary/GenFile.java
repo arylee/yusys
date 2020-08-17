@@ -57,7 +57,7 @@ public class GenFile {
 					if (mainRowCount < mainLimit) {
 						mainWriter.newLine();
 					}
-					if (mainRowCount == (tempRowCount * mainLimit / tempLimit) && tempRowCount < tempLimit) {
+					if (mainRowCount == (tempRowCount * (mainLimit / tempLimit)) && tempRowCount < tempLimit) {
 						tempRowCount++;
 						//outString = String.format("CN00KEY%042dMAIN%0909d-TAC0", mainRowCount, tempRowCount);
 						tempWriter.write(formatTemp(mainRowCount, tempRowCount));
