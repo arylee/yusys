@@ -44,6 +44,7 @@ public class FileComparator {
 								new OutputStreamWriter(fos, ENCODE), 4 * 1024);) {
 					String leftLine = null;
 					String rightLine = null;
+					boolean shouldAddNewLine = false;
 					hasLeftLine = ((leftLine = readerLeft.readLine()) != null);
 					hasRightLine = ((rightLine = readerRight.readLine()) != null);				
 					int count = 0;
@@ -53,14 +54,20 @@ public class FileComparator {
 								hasLeftLine = ((leftLine = readerLeft.readLine()) != null);
 								break;
 							case RIGHT:
+								if (shouldAddNewLine) {
+									writer.newLine();
+								}
 								writer.write(rightLine);
-								writer.newLine();
+								shouldAddNewLine = true;
 								count++;
 								hasRightLine = ((rightLine = readerRight.readLine()) != null);				
 								break;
 							case MATCH:
+								if (shouldAddNewLine) {
+									writer.newLine();
+								}
 								writer.write(leftLine);
-								writer.newLine();
+								shouldAddNewLine = true;
 								count++;
 								hasLeftLine = ((leftLine = readerLeft.readLine()) != null);
 								hasRightLine = ((rightLine = readerRight.readLine()) != null);				
