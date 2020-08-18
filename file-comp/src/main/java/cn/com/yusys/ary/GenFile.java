@@ -72,6 +72,8 @@ public class GenFile {
 				mainRowCount++;
 				//outString = String.format("CN00KEY%042dMAIN%0909d-TAC0", mainRowCount, tempRowCount);
 				tempWriter.write(formatTemp(mainRowCount, tempRowCount));
+				logger.debug(String.format("Have generated tbspacn0[%d], tbsptac0[%d].", 
+						mainRowCount-1, tempRowCount));
 			}
 		} catch (FileNotFoundException e) {
 			logger.error("File not found.", e);

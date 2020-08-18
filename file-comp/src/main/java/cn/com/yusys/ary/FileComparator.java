@@ -77,6 +77,7 @@ public class FileComparator {
 							logger.debug(String.format("[%d] lines had been writen.", count));
 						}
 					}
+					logger.debug(String.format("[%d] lines had been writen.", count));
 				}
 			}
 		} catch (FileNotFoundException e) {
